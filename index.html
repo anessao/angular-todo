@@ -44,9 +44,24 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 	</div>
-	<div ng-controller="ItemCtrl">
-		{{dog}}
-		{{24+5}}
+	<div class="container" ng-controller="ItemCtrl">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<button class="col-xs-6 btn btn-success" ng-click="newItem()">New Item</button>
+				<button class="col-xs-6 btn btn-success" ng-click="allItems()">All Items</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h2>NG Todo</h2>
+				<div ng-show="!showListView">
+					<h3>New Todo</h3>
+				</div>
+				<div ng-show="showListView">
+					<h3>Todo List</h3>
+				</div>
+			</div>
+		</div>
 	</div>
 
 <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>

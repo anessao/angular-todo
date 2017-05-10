@@ -19,3 +19,7 @@ body {
 
 .large-logo {
   width: 200px; }
+
+.btn-success {
+  background-color: #59094E;
+  border: 2px solid white; }
