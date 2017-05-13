@@ -1,0 +1,33 @@
+@import "colors";
+@import "fonts";
+
+body {
+	background-color: $lightest;
+	color: white;
+}
+.navbar {
+	background-color: $dark;
+	border: none;
+	border-radius: 0px;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: $blue;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	background-color: $blue;
+}
+.jumbotron {
+	padding-bottom: 0px;
+	background-color: $blue;
+}
+.large-logo {
+	width: 200px;
+}
+.btn-success {
+	background-color: $dark;
+	border: 2px solid white;
+}
+.panel .panel-body{
+	color: black;
+}

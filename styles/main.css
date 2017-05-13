@@ -1,0 +1,28 @@
+body {
+  background-color: #DFA3D7;
+  color: white; }
+
+.navbar {
+  background-color: #59094E;
+  border: none;
+  border-radius: 0px; }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #32498C; }
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #32498C; }
+
+.jumbotron {
+  padding-bottom: 0px;
+  background-color: #32498C; }
+
+.large-logo {
+  width: 200px; }
+
+.btn-success {
+  background-color: #59094E;
+  border: 2px solid white; }
+
+.panel .panel-body {
+  color: black; }
