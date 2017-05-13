@@ -1,12 +1,13 @@
- //"name of your app", [parameter allows for plug-ins];
+app.run((FIREBASE_CONFIG) => {
+  firebase.initializeApp(FIREBASE_CONFIG);
+});
 
-//$scope connects your javascript to your DOM
 app.controller("NavCtrl", ($scope) => {
 	$scope.cat = "Meow";
 	$scope.navItems = [{name: "Logout"}, {name: "All Items"}, {name: "New Items"}];
 });
 
-app.controller("ItemCtrl", ($scope) => {
+app.controller("ItemCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 	$scope.dog = "Woof";
 	$scope.showListView = true;
   $scope.items = [];
@@ -18,4 +19,37 @@ app.controller("ItemCtrl", ($scope) => {
 		$scope.showListView = true;
 	};
 
+  let getItemList = () => {
+    let itemz = [];
+    return $q((resolve, reject) => {
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/items.json`)
+      .then((fbItems) => {
+        let itemCollection = fbItems.data;
+          Object.keys(itemCollection).forEach((key) => {
+            itemCollection[key].id=key;
+            itemz.push(itemCollection[key]);
+          });
+        resolve(itemz);
+      })
+      .catch((fbError) => {
+        reject(fbError);
+      });
+    });
+
+  };
+  let getItems = () => {
+    getItemList().then((itemz) => {
+      $scope.items = itemz;
+    }).catch((error) => {
+      console.log("get error", error);
+    });
+  };
+  getItems();
+
+
+
 });
+
+
+
+
