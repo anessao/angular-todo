@@ -1,10 +1,54 @@
-app.run((FIREBASE_CONFIG) => {
+app.run(function(FIREBASE_CONFIG) {
   firebase.initializeApp(FIREBASE_CONFIG);
 });
 
+app.config(function($routeProvider) {
+  $routeProvider
+    .when('/items/list', {
+      templateUrl: 'partials/item-list.html',
+      controller: 'ItemListCtrl'
+    })
+    .when('/items/new', {
+      templateUrl: 'partials/item-new.html',
+      controller: 'ItemNewCtrl'
+    })
+    .when('/item/view/:id', {
+      templateUrl: 'partials/item-view.html',
+      controller: 'ItemViewCtrl'
+    })
+    .when('/item/edit/:id', {
+      templateUrl: 'partials/item-new.html',
+      controller: 'ItemEditCtrl'
+    })
+    .otherwise('/items/list');
+});
+
+
+app.controller("ItemListCtrl", function() {
+  console.log("inside ItemListCtrl");
+});
+app.controller("ItemNewCtrl", function() {
+  console.log("inside ItemNewCtrl");
+});
+app.controller("ItemViewCtrl", function() {
+  console.log("inside ItemViewCtrl");
+});
+app.controller("ItemEditCtrl", function() {
+  console.log("inside ItemEditCtrl");
+});
+
+
+
+
+
+
+
+
+
+
 app.controller("NavCtrl", ($scope) => {
-	$scope.cat = "Meow";
-	$scope.navItems = [{name: "Logout"}, {name: "All Items"}, {name: "New Items"}];
+  $scope.cat = "Meow";
+  $scope.navItems = [{name: "Logout"}, {name: "All Items"}, {name: "New Items"}];
 });
 
 app.controller("ItemCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {

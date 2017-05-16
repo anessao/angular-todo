@@ -45,7 +45,20 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 	</div>
-	<div class="container" ng-controller="ItemCtrl">
+
+	<div class="row">
+		<div class="container">
+			<h1>NG Todo</h1>
+			<div class="col-xs-8 col-xs-offset-2" ng-view>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!-- 	<div class="container" ng-controller="ItemCtrl">
 		<div class="row">
 			<div class="col-xs-6 col-xs-offset-3">
 				<button class="col-xs-6 btn btn-success" ng-click="newItem()">New Item</button>
@@ -100,7 +113,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 <!-- //THIRD PARTY JAVASCRIPT FILES -->
@@ -108,6 +121,7 @@
 <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.js"></script>
 
 <!-- //PERSONAL JAVASCRIPT FILES -->
 <script type="text/javascript" src="./javascripts/app.js"></script>
