@@ -1,1 +1,7 @@
-<h1>Inside item-view</h1>
+<div class="container">
+	<h1>To Do Item:</h1>
+	<h2>{{selectedItem.task}}</h2>
+	<button class="btn btn-info"><a ng-href="#!/item/edit/{{selectedItem.id}}">EDIT</a></button>
+	<h3>Assigned to: {{selectedItem.assignedTo}}</h3>
+	<h3>Completed ?: {{selectedItem.isCompleted}}</h3>	
+</div>
